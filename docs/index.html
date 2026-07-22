@@ -72,14 +72,18 @@ fetch('data.json?' + Date.now())
         </div>`).join('');
     }
 
-    document.getElementById('tools-list').innerHTML = tools.map(t => `
-      <div class="card ${t.changed?'changed':''}">
-        <div class="name">${t.name}</div>
-        <div class="cat">${t.category}</div>
-        <span class="status ${t.free}">${{free:'✅ 무료',paid:'🔒 유료',unknown:'⚠️ 확인필요'}[t.free]}</span>
-        ${t.changed?'<span class="changed-tag">변경</span>':''}
-        <div class="alt">대체: ${t.alternatives.slice(0,3).join(', ') || '없음'}</div>
-      </div>`).join('');
+    document.getElementById('tools-list').innerHTML = tools.map(t => {
+      const labels = {free:'✅ 무료',paid:'🔒 유료',unknown:'⚠️ 확인 필요',likely_free:'⚠️ 무료 추정'};
+      const colors = {free:'free',paid:'paid',unknown:'unknown',likely_free:'unknown'};
+      return `
+    <div class="card ${t.changed?'changed':''}">
+      <div class="name">${t.name}</div>
+      <div class="cat">${t.category}</div>
+      <span class="status ${colors[t.free]}">${labels[t.free]}</span>
+      ${t.changed?'<span class="changed-tag">변경</span>':''}
+      ${t.note?`<div class="alt" style="color:#fbbf24">${t.note}</div>`:''}
+      <div class="alt">대체: ${t.alternatives.slice(0,3).join(', ') || '없음'}</div>
+    </div>`}).join('');
   });
 </script>
 </body>

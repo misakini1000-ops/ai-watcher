@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""GitHub Actions용 — data.json 생성"""
-import json, datetime, hashlib, re, urllib.request, urllib.error
+"""GitHub Actions용 — data.json 생성. 3단계 신뢰도 시스템."""
+import json, datetime, urllib.request, urllib.error
 from pathlib import Path
 
 CONFIG = Path(__file__).parent / "ai_price_watcher_config.json"
@@ -25,7 +25,18 @@ result = {"updated": datetime.datetime.now().isoformat(), "tools": []}
 
 for t in tools:
     html = fetch(t["url"])
-    free_now = "free" if html and check_free(html, t["check_text"]) else ("paid" if html else "unknown")
+    has_free_cfg = t.get("free_tier", False)
+    note = t.get("note", "")
+
+    if html is None:
+        free_now = "unknown"
+    elif check_free(html, t["check_text"]):
+        free_now = "free"
+    elif has_free_cfg:
+        free_now = "likely_free"
+    else:
+        free_now = "paid"
+
     old = prev.get(t["name"], {}).get("free")
     changed = old and old != free_now
 
@@ -37,6 +48,7 @@ for t in tools:
         "prev_free": old,
         "url": t["url"],
         "alternatives": t.get("alternatives", []),
+        "note": note,
     })
 
 OUT.parent.mkdir(parents=True, exist_ok=True)

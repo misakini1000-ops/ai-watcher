@@ -53,9 +53,10 @@
       "name": "ElevenLabs",
       "url": "https://elevenlabs.io/pricing",
       "free_tier": true,
-      "check_text": ["Free", "무료"],
+      "check_text": ["Free", "무료", "free plan"],
       "alternatives": ["PlayHT", "Murf AI", "OpenAI TTS"],
-      "category": "음성 생성"
+      "category": "음성 생성",
+      "note": "React SPA — raw HTML에서 무료 감지 어려움. 실제 무료 티어 있음."
     },
     {
       "name": "Notion AI",

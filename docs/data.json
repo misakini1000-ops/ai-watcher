@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-22T16:38:49.086841",
+  "updated": "2026-07-22T16:57:13.133008",
   "tools": [
     {
       "name": "ChatGPT",
@@ -12,7 +12,8 @@
         "Claude 무료",
         "Gemini 무료",
         "Perplexity 무료"
-      ]
+      ],
+      "note": ""
     },
     {
       "name": "Claude",
@@ -24,7 +25,8 @@
       "alternatives": [
         "ChatGPT 무료",
         "Gemini 무료"
-      ]
+      ],
+      "note": ""
     },
     {
       "name": "Gemini",
@@ -36,7 +38,8 @@
       "alternatives": [
         "ChatGPT 무료",
         "Claude 무료"
-      ]
+      ],
+      "note": ""
     },
     {
       "name": "Midjourney",
@@ -49,7 +52,8 @@
         "Stable Diffusion",
         "Leonardo AI",
         "Bing Image Creator"
-      ]
+      ],
+      "note": ""
     },
     {
       "name": "Canva AI",
@@ -62,7 +66,8 @@
         "Microsoft Designer",
         "Adobe Express",
         "Figma"
-      ]
+      ],
+      "note": ""
     },
     {
       "name": "Runway",
@@ -75,12 +80,13 @@
         "Pika",
         "Kling",
         "Hailuo AI"
-      ]
+      ],
+      "note": ""
     },
     {
       "name": "ElevenLabs",
       "category": "음성 생성",
-      "free": "paid",
+      "free": "likely_free",
       "changed": null,
       "prev_free": null,
       "url": "https://elevenlabs.io/pricing",
@@ -88,7 +94,8 @@
         "PlayHT",
         "Murf AI",
         "OpenAI TTS"
-      ]
+      ],
+      "note": "React SPA — raw HTML에서 무료 감지 어려움. 실제 무료 티어 있음."
     },
     {
       "name": "Notion AI",
@@ -100,7 +107,8 @@
       "alternatives": [
         "ChatGPT",
         "Claude"
-      ]
+      ],
+      "note": ""
     },
     {
       "name": "Perplexity",
@@ -112,19 +120,21 @@
       "alternatives": [
         "ChatGPT Search",
         "Google Search"
-      ]
+      ],
+      "note": ""
     },
     {
       "name": "Suno",
       "category": "음악 생성",
-      "free": "paid",
+      "free": "likely_free",
       "changed": null,
       "prev_free": null,
       "url": "https://suno.com/pricing",
       "alternatives": [
         "Udio",
         "Beatoven AI"
-      ]
+      ],
+      "note": ""
     },
     {
       "name": "CapCut",
@@ -137,7 +147,8 @@
         "DaVinci Resolve",
         "Clipchamp",
         "OpenShot"
-      ]
+      ],
+      "note": ""
     },
     {
       "name": "Grammarly",
@@ -149,7 +160,8 @@
       "alternatives": [
         "LanguageTool",
         "ProWritingAid"
-      ]
+      ],
+      "note": ""
     },
     {
       "name": "Leonardo AI",
@@ -161,7 +173,8 @@
       "alternatives": [
         "Stable Diffusion",
         "Midjourney"
-      ]
+      ],
+      "note": ""
     },
     {
       "name": "Pika",
@@ -173,43 +186,47 @@
       "alternatives": [
         "Runway",
         "Kling"
-      ]
+      ],
+      "note": ""
     },
     {
       "name": "Hugging Face",
       "category": "AI 플랫폼",
-      "free": "paid",
+      "free": "likely_free",
       "changed": null,
       "prev_free": null,
       "url": "https://huggingface.co/pricing",
       "alternatives": [
         "Replicate",
         "RunPod"
-      ]
+      ],
+      "note": ""
     },
     {
       "name": "Replit",
       "category": "개발 도구",
-      "free": "paid",
+      "free": "likely_free",
       "changed": null,
       "prev_free": null,
       "url": "https://replit.com/pricing",
       "alternatives": [
         "GitHub Codespaces",
         "CodeSandbox"
-      ]
+      ],
+      "note": ""
     },
     {
       "name": "NotebookLM",
       "category": "AI 노트",
-      "free": "paid",
+      "free": "likely_free",
       "changed": null,
       "prev_free": null,
       "url": "https://notebooklm.google/",
       "alternatives": [
         "ChatGPT 파일 업로드",
         "Claude Project"
-      ]
+      ],
+      "note": ""
     },
     {
       "name": "Remove.bg",
@@ -221,7 +238,8 @@
       "alternatives": [
         "Canva 배경 제거",
         "Adobe Express"
-      ]
+      ],
+      "note": ""
     },
     {
       "name": "Otter.ai",
@@ -234,7 +252,8 @@
         "Whisper",
         "Fireflies.ai",
         "tl;dv"
-      ]
+      ],
+      "note": ""
     },
     {
       "name": "Bing Image Creator",
@@ -246,7 +265,8 @@
       "alternatives": [
         "Leonardo AI",
         "Stable Diffusion"
-      ]
+      ],
+      "note": ""
     }
   ]
 }
