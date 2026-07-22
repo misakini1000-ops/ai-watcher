@@ -73,7 +73,7 @@ fetch('data.json?' + Date.now())
     }
 
     document.getElementById('tools-list').innerHTML = tools.map(t => {
-      const labels = {free:'✅ 무료',paid:'🔒 유료',unknown:'⚠️ 확인 필요',likely_free:'⚠️ 무료 추정'};
+      const labels = {free:'✅ 무료 확인',paid:'🔒 유료 전용',unknown:'⚠️ 접속 불가',likely_free:'⚠️ 확인 필요'};
       const colors = {free:'free',paid:'paid',unknown:'unknown',likely_free:'unknown'};
       return `
     <div class="card ${t.changed?'changed':''}">
