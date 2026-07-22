@@ -1,0 +1,165 @@
+{
+  "version": "1.0",
+  "tools": [
+    {
+      "name": "ChatGPT",
+      "url": "https://openai.com/chatgpt/pricing/",
+      "free_tier": true,
+      "check_text": ["Free", "무료", "free plan", "free tier"],
+      "alternatives": ["Claude 무료", "Gemini 무료", "Perplexity 무료"],
+      "category": "챗봇"
+    },
+    {
+      "name": "Claude",
+      "url": "https://www.anthropic.com/pricing",
+      "free_tier": true,
+      "check_text": ["Free", "무료", "free plan"],
+      "alternatives": ["ChatGPT 무료", "Gemini 무료"],
+      "category": "챗봇"
+    },
+    {
+      "name": "Gemini",
+      "url": "https://one.google.com/about/ai-premium/",
+      "free_tier": true,
+      "check_text": ["Free", "무료", "no cost"],
+      "alternatives": ["ChatGPT 무료", "Claude 무료"],
+      "category": "챗봇"
+    },
+    {
+      "name": "Midjourney",
+      "url": "https://www.midjourney.com/pricing",
+      "free_tier": false,
+      "check_text": ["Basic", "$10", "$30", "$60"],
+      "alternatives": ["Stable Diffusion", "Leonardo AI", "Bing Image Creator"],
+      "category": "이미지 생성"
+    },
+    {
+      "name": "Canva AI",
+      "url": "https://www.canva.com/pricing/",
+      "free_tier": true,
+      "check_text": ["Free", "무료", "Canva Free"],
+      "alternatives": ["Microsoft Designer", "Adobe Express", "Figma"],
+      "category": "디자인"
+    },
+    {
+      "name": "Runway",
+      "url": "https://runwayml.com/pricing/",
+      "free_tier": true,
+      "check_text": ["Free", "Basic", "무료"],
+      "alternatives": ["Pika", "Kling", "Hailuo AI"],
+      "category": "영상 생성"
+    },
+    {
+      "name": "ElevenLabs",
+      "url": "https://elevenlabs.io/pricing",
+      "free_tier": true,
+      "check_text": ["Free", "무료"],
+      "alternatives": ["PlayHT", "Murf AI", "OpenAI TTS"],
+      "category": "음성 생성"
+    },
+    {
+      "name": "Notion AI",
+      "url": "https://www.notion.so/pricing",
+      "free_tier": false,
+      "check_text": ["AI", "add-on", "$10", "$8"],
+      "alternatives": ["ChatGPT", "Claude"],
+      "category": "생산성"
+    },
+    {
+      "name": "Perplexity",
+      "url": "https://www.perplexity.ai/pro",
+      "free_tier": true,
+      "check_text": ["Free", "무료", "free"],
+      "alternatives": ["ChatGPT Search", "Google Search"],
+      "category": "AI 검색"
+    },
+    {
+      "name": "Suno",
+      "url": "https://suno.com/pricing",
+      "free_tier": true,
+      "check_text": ["Free", "무료", "Basic"],
+      "alternatives": ["Udio", "Beatoven AI"],
+      "category": "음악 생성"
+    },
+    {
+      "name": "CapCut",
+      "url": "https://www.capcut.com/pricing",
+      "free_tier": true,
+      "check_text": ["Free", "무료"],
+      "alternatives": ["DaVinci Resolve", "Clipchamp", "OpenShot"],
+      "category": "영상 편집"
+    },
+    {
+      "name": "Grammarly",
+      "url": "https://www.grammarly.com/plans",
+      "free_tier": true,
+      "check_text": ["Free", "무료"],
+      "alternatives": ["LanguageTool", "ProWritingAid"],
+      "category": "글쓰기"
+    },
+    {
+      "name": "Leonardo AI",
+      "url": "https://leonardo.ai/pricing/",
+      "free_tier": true,
+      "check_text": ["Free", "무료"],
+      "alternatives": ["Stable Diffusion", "Midjourney"],
+      "category": "이미지 생성"
+    },
+    {
+      "name": "Pika",
+      "url": "https://pika.art/pricing",
+      "free_tier": true,
+      "check_text": ["Free", "무료", "Basic"],
+      "alternatives": ["Runway", "Kling"],
+      "category": "영상 생성"
+    },
+    {
+      "name": "Hugging Face",
+      "url": "https://huggingface.co/pricing",
+      "free_tier": true,
+      "check_text": ["Free", "무료", "free"],
+      "alternatives": ["Replicate", "RunPod"],
+      "category": "AI 플랫폼"
+    },
+    {
+      "name": "Replit",
+      "url": "https://replit.com/pricing",
+      "free_tier": true,
+      "check_text": ["Free", "Starter", "무료"],
+      "alternatives": ["GitHub Codespaces", "CodeSandbox"],
+      "category": "개발 도구"
+    },
+    {
+      "name": "NotebookLM",
+      "url": "https://notebooklm.google/",
+      "free_tier": true,
+      "check_text": ["Free", "무료", "free"],
+      "alternatives": ["ChatGPT 파일 업로드", "Claude Project"],
+      "category": "AI 노트"
+    },
+    {
+      "name": "Remove.bg",
+      "url": "https://www.remove.bg/pricing",
+      "free_tier": true,
+      "check_text": ["Free", "무료", "1 credit"],
+      "alternatives": ["Canva 배경 제거", "Adobe Express"],
+      "category": "이미지 편집"
+    },
+    {
+      "name": "Otter.ai",
+      "url": "https://otter.ai/pricing",
+      "free_tier": true,
+      "check_text": ["Basic", "Free", "무료"],
+      "alternatives": ["Whisper", "Fireflies.ai", "tl;dv"],
+      "category": "회의록"
+    },
+    {
+      "name": "Bing Image Creator",
+      "url": "https://www.bing.com/images/create",
+      "free_tier": true,
+      "check_text": ["free", "무료", "boost"],
+      "alternatives": ["Leonardo AI", "Stable Diffusion"],
+      "category": "이미지 생성"
+    }
+  ]
+}

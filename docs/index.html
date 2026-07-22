@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 비용 절약 비서</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,sans-serif;background:#0f172a;color:#e2e8f0;padding:16px;max-width:600px;margin:0 auto}
+h1{font-size:20px;margin-bottom:2px}
+.sub{color:#94a3b8;font-size:13px;margin-bottom:16px}
+.badge{display:inline-block;background:#1e293b;border-radius:8px;padding:6px 10px;margin:2px;font-size:13px}
+.badge.green{background:#065f46;color:#6ee7b7}
+.badge.red{background:#7f1d1d;color:#fca5a5}
+.badge.yellow{background:#78350f;color:#fcd34d}
+.card{background:#1e293b;border-radius:12px;padding:14px;margin-bottom:10px;border-left:3px solid #334155}
+.card.changed{border-left-color:#ef4444;background:#1e1b2e}
+.card .name{font-weight:600;font-size:15px}
+.card .cat{font-size:12px;color:#94a3b8}
+.card .status{display:inline-block;padding:2px 8px;border-radius:4px;font-size:12px;margin-top:4px}
+.status.free{background:#065f46;color:#6ee7b7}
+.status.paid{background:#7f1d1d;color:#fca5a5}
+.status.unknown{background:#334155;color:#94a3b8}
+.card .alt{font-size:12px;color:#94a3b8;margin-top:4px}
+.changed-tag{font-size:10px;background:#dc2626;color:#fff;padding:1px 5px;border-radius:3px;margin-left:4px}
+.footer{text-align:center;color:#475569;font-size:11px;margin-top:16px}
+.changed-section{margin-bottom:12px}
+.section-title{font-size:14px;font-weight:600;margin-bottom:8px;color:#f87171}
+</style>
+</head>
+<body>
+<h1>🔍 AI 비용 절약 비서</h1>
+<p class="sub">AI 도구 무료/유료 상태 · <span id="updated">로딩 중...</span></p>
+
+<div class="changed-section" id="changed-section" style="display:none">
+  <div class="section-title">🚨 이번 주 변경 감지</div>
+  <div id="changed-list"></div>
+</div>
+
+<div id="stats"></div>
+<div id="tools-list">로딩 중...</div>
+
+<p class="footer">매일 오전 9시 자동 업데이트 · 무료→유료 전환 시 알림</p>
+
+<script>
+fetch('data.json?' + Date.now())
+  .then(r => r.json())
+  .then(data => {
+    document.getElementById('updated').textContent = new Date(data.updated).toLocaleString('ko-KR');
+
+    const tools = data.tools;
+    const free = tools.filter(t => t.free === 'free');
+    const paid = tools.filter(t => t.free === 'paid');
+    const unknown = tools.filter(t => t.free === 'unknown');
+    const changed = tools.filter(t => t.changed);
+
+    document.getElementById('stats').innerHTML = `
+      <div style="margin-bottom:12px">
+        <span class="badge green">✅ 무료 ${free.length}</span>
+        <span class="badge red">🔒 유료 ${paid.length}</span>
+        <span class="badge yellow">⚠️ 확인 ${unknown.length}</span>
+        ${changed.length ? `<span class="badge" style="background:#dc2626;color:#fff">🚨 변경 ${changed.length}</span>` : ''}
+      </div>`;
+
+    if (changed.length) {
+      document.getElementById('changed-section').style.display = 'block';
+      document.getElementById('changed-list').innerHTML = changed.map(t => `
+        <div class="card changed">
+          <div class="name">${t.name} ${t.free==='paid'?'🔒':'✅'}</div>
+          <div class="cat">${t.category} · ${t.prev_free==='free'?'무료→유료':'유료→무료'}</div>
+          <div class="alt">대체: ${t.alternatives.slice(0,3).join(', ')}</div>
+        </div>`).join('');
+    }
+
+    document.getElementById('tools-list').innerHTML = tools.map(t => `
+      <div class="card ${t.changed?'changed':''}">
+        <div class="name">${t.name}</div>
+        <div class="cat">${t.category}</div>
+        <span class="status ${t.free}">${{free:'✅ 무료',paid:'🔒 유료',unknown:'⚠️ 확인필요'}[t.free]}</span>
+        ${t.changed?'<span class="changed-tag">변경</span>':''}
+        <div class="alt">대체: ${t.alternatives.slice(0,3).join(', ') || '없음'}</div>
+      </div>`).join('');
+  });
+</script>
+</body>
+</html>
