@@ -82,7 +82,7 @@ fetch('data.json?' + Date.now())
       <span class="status ${colors[t.free]}">${labels[t.free]}</span>
       ${t.changed?'<span class="changed-tag">변경</span>':''}
       ${t.note?`<div class="alt" style="color:#fbbf24">${t.note}</div>`:''}
-      <div class="alt">대체: ${t.alternatives.slice(0,3).join(', ') || '없음'}</div>
+      <div class="alt">대체: ${t.alternatives.slice(0,3).map(a => `<a href="https://www.google.com/search?q=${encodeURIComponent(a+' AI')}" target="_blank" style="color:#60a5fa">${a} ↗</a>`).join(', ') || '없음'}</div>
     </div>`}).join('');
   });
 </script>
